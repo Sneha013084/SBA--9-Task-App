@@ -19,24 +19,28 @@ export interface TaskFormData{
 }
 
 // filter
-export interface TaskFilter{
+export interface TaskOptions{
 
     status?: Task['status']
     priority?: Task['priority']
 }
+
+
 
 // COMPONENTs
 //Taskform component - calls when a form submits with new task data
 
 export interface TaskFormProps{
     onAddTask : (task: Omit <Task ,'id'>)=> void;
+
 }
 //TaskFilter component
 
 export interface TaskFilterProps{
-    filter: TaskFilter;
-    onFilterChange:( filter: TaskFilter) =>void;
+    filter: TaskOptions;
+    onFilterChange:( filter: TaskOptions) =>void;
 }
+
 //props individual task item
 
 export interface TaskItemProps{
@@ -46,11 +50,12 @@ export interface TaskItemProps{
     onPriorityChange : (id:string, priority :Task['priority'])=>void;
 
 }
+
 // props for Tasklist
 
 export interface TaskListProps{
     tasks: Task[];
     onDelete : (id:string )=>void;
     onStatusChange :(id:string, task:Task['status'])=> void;
-     onPriorityChange?: (id: string, priority: Task['priority']) => void;
+     onPriorityChange: (id: string, priority: Task['priority']) => void;
 }
