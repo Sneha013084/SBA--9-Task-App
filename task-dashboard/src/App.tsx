@@ -1,16 +1,16 @@
 import { useState } from 'react'
 
 import './App.css'
-// import Dashboard from './components/Dashboard/Dashboard'
-// import type { Task } from './types';
+import Dashboard from './components/Dashboard/Dashboard'
+import type { Task } from './types';
 
 function App() {
 // const [tasks, setTasks] = useState <Task[]>
 
   return (
-    // <div className='App'>
+    <div className='App'>
       <h1>Task Dashboard</h1>
-    /* /* <main>
+    <main>
         <section>
       <TaskList
       tasks ={tasks}
@@ -24,8 +24,7 @@ function App() {
       </div>
 
   );
-} */
-)}
+} 
 
   
 export default App;

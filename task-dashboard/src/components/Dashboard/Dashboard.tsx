@@ -18,12 +18,51 @@ import TaskList from '../TaskList/TaskList';
 
       }
 // // to add a new task= keep the previous task along with the new tasks
-   const handl
-        
+   function handleAddTask(newTask: Task) {
+    setTasks(prevTasks => [...prevTasks, newTask]);
+  }
 
+  // Handler to change filter options
+  function handleFilterChange(newFilter: TaskOptions) {
+    setFilter(newFilter);
+  }
 
-        return statusFilter ==='all' || task.status ===statusFiletr;
-    })
+  // Handler to delete a task by id
+  function handleDeleteTask(taskId: string) {
+    setTasks(prevTasks => prevTasks.filter(task => task.id !== taskId));
+  }
+
+  // Handler to update task status by id
+  function handleStatusChange(taskId: string, newStatus: string) {
+    setTasks(prevTasks =>
+      prevTasks.map(task =>
+        task.id === taskId ? { ...task, status: newStatus } : task
+      )
+    );
+  }
+
+  // Handler to update task priority by id
+  function handlePriorityChange(taskId: string, newPriority: string) {
+    setTasks(prevTasks =>
+      prevTasks.map(task =>
+        task.id === taskId ? { ...task, priority: newPriority } : task
+      )
+    );
+  }
+
+  // Filter tasks based on filter state
+  const filteredTasks = tasks.filter(task => {
+    // Example: if filter.status is 'all' or undefined, show all
+    if (filter.status && filter.status !== 'all' && task.status !== filter.status) {
+      return false;
+    }
+    // Add more filter criteria as needed, e.g., priority
+    if (filter.priority && filter.priority !== 'all' && task.priority !== filter.priority) {
+      return false;
+    }
+    return true;
+  });
+
 
     return(
     <div>

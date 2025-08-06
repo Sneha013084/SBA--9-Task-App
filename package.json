@@ -1,26 +1,22 @@
 {
   "name": "sba---9",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "preview": "vite preview",
-    "lint": "eslint .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Sneha013084/SBA--9-Task-App.git"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/Sneha013084/SBA--9-Task-App/issues"
   },
   "homepage": "https://github.com/Sneha013084/SBA--9-Task-App#readme",
+  "description": "",
   "dependencies": {
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
