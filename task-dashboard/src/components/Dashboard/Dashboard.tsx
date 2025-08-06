@@ -14,25 +14,27 @@ import TaskList from '../TaskList/TaskList';
       
       //function to handle the change in the textbox
 
-    //   function handleInputChange(event){
-
-      }
+    
 // // to add a new task= keep the previous task along with the new tasks
+
    function handleAddTask(newTask: Task) {
     setTasks(prevTasks => [...prevTasks, newTask]);
   }
 
   // Handler to change filter options
+
   function handleFilterChange(newFilter: TaskOptions) {
     setFilter(newFilter);
   }
 
   // Handler to delete a task by id
+
   function handleDeleteTask(taskId: string) {
     setTasks(prevTasks => prevTasks.filter(task => task.id !== taskId));
   }
 
   // Handler to update task status by id
+
   function handleStatusChange(taskId: string, newStatus: string) {
     setTasks(prevTasks =>
       prevTasks.map(task =>
@@ -42,6 +44,7 @@ import TaskList from '../TaskList/TaskList';
   }
 
   // Handler to update task priority by id
+
   function handlePriorityChange(taskId: string, newPriority: string) {
     setTasks(prevTasks =>
       prevTasks.map(task =>
@@ -51,12 +54,15 @@ import TaskList from '../TaskList/TaskList';
   }
 
   // Filter tasks based on filter state
+
   const filteredTasks = tasks.filter(task => {
     // Example: if filter.status is 'all' or undefined, show all
+
     if (filter.status && filter.status !== 'all' && task.status !== filter.status) {
       return false;
     }
     // Add more filter criteria as needed, e.g., priority
+
     if (filter.priority && filter.priority !== 'all' && task.priority !== filter.priority) {
       return false;
     }
@@ -68,7 +74,7 @@ import TaskList from '../TaskList/TaskList';
     <div>
        <h1>Task Dashboard</h1> 
        <TaskForm
-       onAddTask={taskData} />
+       onAddTask={handleAddTask} />
        <TaskFilter filter={filter} onFilterChange={handleFilterChange} />
        <TaskList
           tasks={filteredTasks}
@@ -79,5 +85,6 @@ import TaskList from '../TaskList/TaskList';
     </div>
        
     );
+   }
 
 
