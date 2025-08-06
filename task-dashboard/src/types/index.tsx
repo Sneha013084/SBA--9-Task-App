@@ -1,4 +1,7 @@
 //Task data structure :how the task is stored throughout the app (shows the application with Id)
+export type TaskStatus = 'pending' | 'in-progress' | 'completed';
+export type TaskPriority = 'low' | 'medium' | 'high';
+
 
 export interface Task{
     id : string;
@@ -13,17 +16,17 @@ export interface Task{
 export interface TaskFormData{
     title: string;
     description:string;
-    status: Task['status'];
-    priority : Task['priority'];
+    status: TaskStatus;
+    priority : TaskPriority ;
     dueDate ?: string
 }
 
 // filter
 export interface TaskOptions{
 
-    status?: Task['status']
-    priority?: Task['priority']
-}
+    status?: TaskStatus |'all';
+    priority?: TaskPriority | 'all'
+};
 
 
 

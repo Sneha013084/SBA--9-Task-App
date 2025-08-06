@@ -1,4 +1,5 @@
 import React, { useState} from 'react';
+import type { TaskStatus, TaskPriority } from '../../types';
 import type { Task, TaskOptions } from '../../types';
 import TaskFilter from '../TaskFilter/TaskFilter';
 import TaskForm from '../TaskForm/TaskForm';
@@ -17,15 +18,21 @@ import TaskList from '../TaskList/TaskList';
     
 // // to add a new task= keep the previous task along with the new tasks
 
+
+
    function handleAddTask(newTask: Task) {
     setTasks(prevTasks => [...prevTasks, newTask]);
   }
+
+
 
   // Handler to change filter options
 
   function handleFilterChange(newFilter: TaskOptions) {
     setFilter(newFilter);
   }
+
+
 
   // Handler to delete a task by id
 
@@ -35,7 +42,7 @@ import TaskList from '../TaskList/TaskList';
 
   // Handler to update task status by id
 
-  function handleStatusChange(taskId: string, newStatus: string) {
+  function handleStatusChange(taskId: string, newStatus: TaskStatus) {
     setTasks(prevTasks =>
       prevTasks.map(task =>
         task.id === taskId ? { ...task, status: newStatus } : task
@@ -45,7 +52,7 @@ import TaskList from '../TaskList/TaskList';
 
   // Handler to update task priority by id
 
-  function handlePriorityChange(taskId: string, newPriority: string) {
+  function handlePriorityChange(taskId: string, newPriority: TaskPriority) {
     setTasks(prevTasks =>
       prevTasks.map(task =>
         task.id === taskId ? { ...task, priority: newPriority } : task
@@ -73,8 +80,7 @@ import TaskList from '../TaskList/TaskList';
     return(
     <div>
        <h1>Task Dashboard</h1> 
-       <TaskForm
-       onAddTask={handleAddTask} />
+       <TaskForm onAddTask={handleAddTask} />
        <TaskFilter filter={filter} onFilterChange={handleFilterChange} />
        <TaskList
           tasks={filteredTasks}
