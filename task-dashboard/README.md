@@ -21,10 +21,10 @@ TaskForm : A form component to add or edit tasks. Manages form inputs and valida
 
 TaskFilter:  Provides UI controls to filter tasks based on status, priority, or search keywords.
 
-Dashboard : (Optional) Main container component that composes all other components into a cohesive dashboard p
+Dashboard : (Optional) Main container component that composes all other components into a cohesive dashboard 
 
 
-The root React component.
+The root React component.(App)
 
 Manages the main state of the app (list of tasks).
 
