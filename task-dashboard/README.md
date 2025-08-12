@@ -39,5 +39,5 @@ handlePriorityChange(taskId, newPriority) — updates the priority of a specific
 
 handleDelete(taskId) — removes a task from the list.
 
-##  Challenges face ##  
+##  Challenges faced ##  
 I encountered errors when passing props and struggled with type safety. The biggest challenge was that nothing was rendering in the browser initially.
